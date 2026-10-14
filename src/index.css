@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+/* ========================================================
+   CENTRUM STEROWANIA PALETĄ KOLORÓW
+   Zmień wartości w :root poniżej, aby zmienić cały projekt!
+   ======================================================== */
+:root {
+  /* Tła */
+  --theme-bg: #09090b;            /* Główne tło ekranu (ciemny antracyt) */
+  --theme-surface: #18181b;       /* Tło modala i paneli (Zinc 900) */
+  --theme-surface-subtle: #27272a;/* Wewnętrzne elementy / hover paneli */
+
+  /* Kolory Akcentu (Główny brand) */
+  --theme-accent: #06b6d4; /* Zmiana na błękit Cyber Cyan! */
+  --theme-accent-hover: #b8e600;   /* Kolor akcentu po najechaniu / tapnięciu */
+  --theme-accent-dim: rgba(204, 255, 0, 0.15); /* Półprzezroczysty glow */
+
+  /* Ramki i Linie */
+  --theme-border: rgba(255, 255, 255, 0.12); /* Domyślne subtelne obramowanie */
+  --theme-border-accent: rgba(204, 255, 0, 0.35); /* Obramowanie z poświatą */
+
+  /* Teksty */
+  --theme-text-primary: #fafafa;   /* Główny biały tekst */
+  --theme-text-muted: #a1a1aa;     /* Szary tekst pomocniczy */
+}
+
+/* ========================================================
+   THEME
+   ======================================================== */
+@theme {
+  --color-theme-bg: var(--theme-bg);
+  --color-theme-surface: var(--theme-surface);
+  --color-theme-surface-subtle: var(--theme-surface-subtle);
+
+  --color-theme-accent: var(--theme-accent);
+  --color-theme-accent-hover: var(--theme-accent-hover);
+  --color-theme-accent-dim: var(--theme-accent-dim);
+
+  --color-theme-border: var(--theme-border);
+  --color-theme-border-accent: var(--theme-border-accent);
+
+  --color-theme-text-primary: var(--theme-text-primary);
+  --color-theme-text-muted: var(--theme-text-muted);
+}
+
+/* ========================================================
+   Style bazowe i Mobile-First
+   ======================================================== */
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: var(--theme-bg);
+  color: var(--theme-text-primary);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: none; /* Blokuje pull-to-refresh na telefonach */
+}
+/* Wyłączamy kursor systemowy tylko na urządzeniach z myszką */
+@media (pointer: fine) {
+  *,
+  *::before,
+  *::after {
+    cursor: none !important;
+  }
+}
